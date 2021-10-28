@@ -1,0 +1,39 @@
+.temp-icon{
+    color:rgba(0, 174, 255, 0.342); 
+    position: absolute;
+    font-size: 60px;
+}
+
+.time{
+    margin-top:20px;
+}
+
+.temp-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-or-remove{
+    background-color: transparent;
+    border:none;
+    padding:0;
+    width:max-content;
+    height:max-content;
+    color:rgb(0, 174, 255);
+    border: solid white 1px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.daily-forecast-btn{
+    color:white;
+    border: solid white 1px;
+    font-size: 12px;
+    background-color: rgb(0, 174, 255);
+    border-radius: 10%;
+    padding: 2px 2px;
+}
+
+.temperature-icon{
+    font-size: 25px;
+}

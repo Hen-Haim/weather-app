@@ -1,0 +1,23 @@
+
+.favorites-cards >div{
+    display: flex;
+    flex-direction: row;
+    font-family: cursive;
+    justify-content: space-around;
+    align-items: center;
+    padding:4px 2px;
+}
+
+.favorites-cards >div p{
+    font-family: cursive;
+    margin: 0;
+    padding:0;
+    align-items: center;
+}
+
+.main-container-header> h3{
+    text-align: center;
+    margin: 20px 0 20px 0;
+    color: white;
+    text-shadow: 1px 1px 1px grey, -1px 5px 1px rgb(0, 174, 255, 0.3334), -1px -1px 1px grey;
+}

@@ -1,38 +1,109 @@
 .App {
-  text-align: center;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 15% 80% 5%;
+    grid-template-columns:repeat(12,1fr);
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:  Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App > Header{
+    grid-row: 1/2;
+    grid-column:span 12;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App > Main{
+    grid-row: 2 / 3;
+    grid-column:span 12;
+    margin:0;
+    padding:0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App > Footer{
+    grid-row: 3 / 4;
+    grid-column:span 12;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(0, 98, 143); 
 }
 
-.App-link {
-  color: #61dafb;
+.logo{
+    width:50px;
+    height: 50px;
+    align-self: center;
+    border-radius: 17%;
+    margin-right:10px;
+    box-shadow: 1px 5px 10px rgb(167, 167, 167);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header{
+    display: flex;
+    flex-direction: row;
+    padding: 0 100px 0 40px;
+    justify-content: space-between;
+    text-align: center;
+    font-size: small;
+    font-stretch: extra-condensed;
+    color:rgb(0, 98, 143);
+    text-shadow: 1px 1px 1px rgb(87, 87, 87), -1px 5px 7px  rgb(167, 167, 167), -1px -1px 1px  rgb(167, 167, 167);
+}
+
+.header-div-app{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-div-app>h1{
+    padding: 0;
+    margin:0;
+    align-self: center;
+    font-size: 25px;
+}
+
+.header-div-app>h1>span{
+    color:#FFC000;
+    font-size: larger;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    width:450px;
+    text-align: center;
+    align-items: center;
+}
+
+.nav > a{
+    flex:1;
+    border-left: solid 2px rgb(0, 98, 143); 
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+footer{
+    color:white;
+    text-align: center;
+}
+
+section{
+    position: fixed;
+    top:88px;
+    left:33vw;
+    width:30vw;
+    height: max-content;
+    color:rgb(0, 174, 255);
+    border: solid rgb(0, 174, 255) 1px;
+    font-size: 12px;
+    background-color: white;
+    border-radius: 7px;
+    padding: 2px 2px;
+    font-size: 15px;
+    text-align: center;
 }
