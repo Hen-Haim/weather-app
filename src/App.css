@@ -135,8 +135,8 @@ section{
 
 .light-btn{
     background-color: white;
-    color: rgb(123, 194, 226);
-    border: rgb(123, 194, 226) 3px solid;
+    color: rgba(21,96,131,.889);
+    border: 3px solid rgba(21,96,131,.589);
     text-shadow: 1px 1px 1px rgb(175, 175, 175);
 }
 
