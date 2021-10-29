@@ -10,7 +10,7 @@
     width: 660px;
     border: rgb(204, 204, 204) 1px solid;
     height: 82%;
-    margin: 2% 0 0 2%;
+    margin: 2% 0 0 0;
     background-blend-mode:  overlay;
     background-image: url("../../assets/main-pic2.jpg");
     background-repeat: no-repeat;
@@ -89,16 +89,6 @@
     font-weight: bold;
     z-index: 20000;
     font-family: cursive;
-}
-
-.dark{
-    background-color: black;
-    color: white;
-}
-
-.dark> header{
-    color:rgb(123, 194, 226) !important;
-    text-shadow: 1px 1px 1px rgb(87, 87, 87), -1px 5px 7px  rgb(167, 167, 167), -1px -1px 1px  rgb(167, 167, 167) !important;
 }
 
 .dark> main .main-container-overlay> div{
