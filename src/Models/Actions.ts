@@ -37,6 +37,11 @@ interface MSG {
   payload: string;
 }
 
+interface THEMES {
+  type: AllActionType.THEMES;
+  payload: string;
+}
+
 export type Actions =
   | ADD_FAVORITE
   | REMOVE_FAVORITE
@@ -44,4 +49,5 @@ export type Actions =
   | CITY_WEATHER
   | GET_DAILY_FORECASTS
   | MSG
-  | CLEAR_CITY_WEATHER;
+  | CLEAR_CITY_WEATHER
+  | THEMES;

@@ -26,9 +26,9 @@ export const Search = () => {
 
   useEffect(() => {
     if (favorites[0] === undefined) {
-      dispatch(getFiveDaysWeather(telAviv));
-    } else {
-      dispatch(getFiveDaysWeather(favorites[0].key));
+      dispatch(getFiveDaysWeather(telAviv, "Tel Aviv"));        
+    }else{
+      dispatch(getFiveDaysWeather(favorites[0].Key, favorites[0].LocalizedName));
     }
   }, []);
 
@@ -53,13 +53,6 @@ export const Search = () => {
 
   return (
     <div className="main">
-      <div className="daily-cards">
-        {dailyWeather?.map(
-          (city: WeatherPerCityModel & DailyForecastsModel, index: number) => {
-            return <MainCard key={100 + index} city={city}/>;
-          }
-        )}
-      </div>
       <div className="main-container-overlay">
         <div>
           <div className="main-container-header">
@@ -73,15 +66,24 @@ export const Search = () => {
               </button>
             </form>
           </div>
-            <div className="search-cards">
-                {isItSearchResults && weatherPerCity?.map(
-                ( city: WeatherPerCityModel & DailyForecastsModel, index: number ) => {
-                    return <MainCard key={index} city={city}/>
-                    }     
-                )}
-            </div>
+          <div className="search-cards">
+              {isItSearchResults && weatherPerCity?.map(
+              ( city: WeatherPerCityModel & DailyForecastsModel, index: number ) => {
+                  return <MainCard key={index} city={city}/>
+                  }     
+              )}
+          </div>
+          <h3>{dailyWeather[0]?.localizedName}</h3>
+          <div className="daily-cards">
+            {dailyWeather?.map(
+              (city: WeatherPerCityModel & DailyForecastsModel, index: number) => {
+                return <MainCard key={100 + index} city={city}/>;
+              }
+            )}
+          </div>            
         </div>
       </div>
+      
     </div>
   );
 };

@@ -1,6 +1,7 @@
 export class DailyForecastsModel {
   public Date?: string;
   public Temperature?: TemperatureModel;
+  public localizedName?: string;
 }
 
 export class TemperatureModel {

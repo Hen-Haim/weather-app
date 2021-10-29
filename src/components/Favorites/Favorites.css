@@ -17,7 +17,14 @@
 
 .main-container-header> h3{
     text-align: center;
-    margin: 20px 0 20px 0;
+    margin: 36px 0 36px 0;
     color: white;
     text-shadow: 1px 1px 1px grey, -1px 5px 1px rgb(0, 174, 255, 0.3334), -1px -1px 1px grey;
+}
+
+.main-container-overlay> div> h3{
+    text-align: center;
+    margin: 5px 0 10px 0;
+    color: #FFC000;
+    text-shadow: 1px 1px 1px grey, -1px 1px 7px rgb(0, 92, 134), 1px -1px 7px rgb(0, 92, 134);
 }

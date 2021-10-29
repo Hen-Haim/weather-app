@@ -1,14 +1,15 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
-
+import { sendMessage } from "../../store/actions";
+import { useDispatch } from "react-redux";
+//images
 import img1 from "../../assets/home-pic1.jpg";
 import img2 from "../../assets/home-pic2.jpg";
 import img3 from "../../assets/home-pic3.jpg";
 import img4 from "../../assets/home-pic4.jpg";
 import img5 from "../../assets/home-pic5.jpg";
 import img6 from "../../assets/home-pic6.jpg";
-import { sendMessage } from "../../store/actions";
-import { useDispatch } from "react-redux";
+
 
 export const Home = () => {
   let images = [img1, img2, img3, img4, img5, img6];

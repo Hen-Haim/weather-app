@@ -1,6 +1,7 @@
 .home{
     display:flex;
     flex-direction: row;
+    height: 628px;
 }
 
 .home >div{

@@ -37,3 +37,19 @@
 .temperature-icon{
     font-size: 25px;
 }
+
+.temp-c-btn{
+    background-color: rgb(73, 210, 252);
+    border-radius: 15%;
+    padding: 1.5px 7px;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.temp-f-btn{
+    background-color: rgb(255, 193, 77);
+    border-radius: 15%;
+    padding: 1.5px 7px;
+    font-size: 13px;
+    margin-left: 5px;
+}

@@ -3,14 +3,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 578px;
+    height: 628px;
 }
 
 .main-container-overlay{
-    width: 55%;
+    width: 660px;
     border: rgb(204, 204, 204) 1px solid;
-    height: 68%;
-    margin-bottom: 2%;
+    height: 82%;
+    margin: 2% 0 0 2%;
     background-blend-mode:  overlay;
     background-image: url("../../assets/main-pic2.jpg");
     background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 .main-container-header {
     text-align: center;
     padding: 10px 0 10px 0 ;
-    margin: 0 0 30px 0 ;
+    margin: 0 0 20px 0 ;
     text-shadow: 1px 1px 1px rgb(56, 56, 56), -1px 5px 7px  rgb(44, 44, 44), -1px -1px 1px  rgb(49, 49, 49);
     background: rgb(0,152,149);
     background: linear-gradient(180deg, rgba(0,152,149,0.23322832550989148) 0%, rgba(182, 123, 28, 0.438) 100%);
@@ -51,7 +51,7 @@
 .main-container-overlay> div >:nth-child(2){
     overflow-y: scroll;
     overflow-x: hidden;
-    height:210px;
+    height: 220px;
 }
 
 .daily-cards{
@@ -59,13 +59,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
 }
 
 .daily-cards > div>.temperature{
     display: flex;
     flex-direction: row;
-    width:110px;
+    width:75px;
     justify-content: center;
 }
 
@@ -76,6 +76,7 @@
     margin-left:10px;
     border-radius: 10%;
     padding:10px 20px;
+    background-color: rgba(255, 255, 255, 0.863);
 
 }
 
@@ -89,3 +90,52 @@
     z-index: 20000;
     font-family: cursive;
 }
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.dark> header{
+    color:rgb(123, 194, 226) !important;
+    text-shadow: 1px 1px 1px rgb(87, 87, 87), -1px 5px 7px  rgb(167, 167, 167), -1px -1px 1px  rgb(167, 167, 167) !important;
+}
+
+.dark> main .main-container-overlay> div{
+    background-color: rgba(46, 46, 46, 0.733) !important;
+    height:100%;
+    border-radius: 3%;
+}
+
+.dark> main .main-container-header {
+    background: rgb(0,152,149);
+    background: linear-gradient(180deg, rgba(21, 96, 131, 0.589) 0%, rgba(255, 255, 255, 0.185) 100%);
+}
+
+.page {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+  }
+  
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+

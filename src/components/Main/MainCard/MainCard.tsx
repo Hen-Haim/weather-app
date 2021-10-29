@@ -17,18 +17,14 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
   const [addIcon, setAddIcon] = useState<number>(0);
   const dispatch = useDispatch();
   const [existOnFavorite, setExistOnFavorite] = useState(false);
-
-  // useEffect(() => {
-  //   iconForFavorite();
-  //   console.log('dd');
-  // }, []);
+  const [uniteChanging, setUniteChanging] = useState('c');
 
   useEffect(() => {
     iconForFavorite();
   }, [favorites, addIcon]);
 
   const dailyForecastForThisCity = () => {
-    props.city.Key && dispatch(getFiveDaysWeather(props.city.Key));
+    props.city.Key && props.city?.LocalizedName && dispatch(getFiveDaysWeather(props.city.Key, props.city.LocalizedName));
   };
 
   const iconForFavorite = () => {
@@ -47,6 +43,14 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
       }
     }
   };
+
+  const uniteChangingFunc = ()=>{
+    if(uniteChanging === 'c'){
+      setUniteChanging('f');
+    }else{
+      setUniteChanging('c');
+    }
+  }
 
   const favoritesIcon = () => {
     if (props.city.Key) {
@@ -104,8 +108,9 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
 
   return (
     <div className="cards-container">
+      {/* weather per city */}
       {
-        props.city?.LocalObservationDateTime && ( //weather per city
+        props.city?.LocalObservationDateTime && ( 
           <>
             <FontAwesomeIcon onClick={favoritesIcon} icon={existOnFavorite ? faMinusSquare : faPlusSquare}
               className="add-or-remove"
@@ -114,8 +119,13 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
             <p>{props.city?.LocalObservationDateTime.slice(11, 16)}</p>
             <p>{props.city?.LocalizedName}</p>
             <div className="temp-div">
-              <p>{props.city?.Temperature?.Metric?.Value}</p>
-              <p>{props.city?.Temperature?.Metric?.Unit}</p>
+              <p>{uniteChanging === 'c' ? props.city?.Temperature?.Metric?.Value : props.city?.Temperature?.Imperial?.Value} &#176;</p>
+              <p>{uniteChanging === 'c' ? props.city?.Temperature?.Metric?.Unit : props.city?.Temperature?.Imperial?.Unit}</p>
+              <div>
+              <button className={uniteChanging === 'c'? 'temp-c-btn' : 'temp-f-btn'} 
+                onClick={uniteChangingFunc}>{uniteChanging === 'c'? 'f' : 'c'}
+                </button>               
+              </div>
             </div>
             <p>{props.city?.WeatherText}</p>
             <FontAwesomeIcon icon={temperature()} style={{ color: temperatureColor() }}
@@ -126,8 +136,8 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
             </button>
           </>
         )
-        //daily
       }
+      {/* daily weather */}
       {props.city?.Date && (
         <>
           <FontAwesomeIcon icon={faSun} className="temp-icon" />
@@ -143,7 +153,6 @@ export const MainCard = (props: { city: WeatherPerCityModel & DailyForecastsMode
           </div>
         </>
       )}
-      <p>{props.city?.Country}</p>
     </div>
   );
 };

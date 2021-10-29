@@ -37,3 +37,9 @@
     align-items: center;
 }
 
+.main-container-overlay> div> h3{
+    text-align: center;
+    margin: 5px 0 10px 0;
+    color: #FFC000;
+    text-shadow: 1px 1px 1px grey, -1px 1px 7px rgb(0, 92, 134), 1px -1px 7px rgb(0, 92, 134);
+}

@@ -7,6 +7,8 @@
     padding:0;
     box-sizing: border-box;
     font-family:  Geneva, Verdana, sans-serif;
+    color:black;
+    overflow:hidden
 }
 
 .App > Header{
@@ -57,6 +59,10 @@ header{
     flex-direction: row;
 }
 
+.header-div-app > div{
+    align-self: center;
+}
+
 .header-div-app>h1{
     padding: 0;
     margin:0;
@@ -90,11 +96,12 @@ header{
 footer{
     color:white;
     text-align: center;
+    background-color: rgb(0, 98, 143);
 }
 
 section{
     position: fixed;
-    top:88px;
+    top:70px;
     left:33vw;
     width:30vw;
     height: max-content;
@@ -106,4 +113,49 @@ section{
     padding: 2px 2px;
     font-size: 15px;
     text-align: center;
+}
+
+.theme-btn{
+    margin-left:40px;
+    padding: 4px 5px;
+    align-self: center;
+    font-size: 15px;
+    font-family: Geneva, Verdana, sans-serif;  
+    font-stretch: extra-condensed;
+    border-radius: 12%;
+
+}
+
+.dark-btn{
+    background-color: rgb(17, 76, 104);
+    color:white;
+    border:rgb(209, 209, 209) 3px solid;
+    text-shadow: 1px 1px 7px white;
+}
+
+.light-btn{
+    background-color: white;
+    color: rgb(123, 194, 226);
+    border: rgb(123, 194, 226) 3px solid;
+    text-shadow: 1px 1px 1px rgb(175, 175, 175);
+}
+
+.dark{
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+.dark> header{
+    color:rgb(123, 194, 226) !important;
+    text-shadow: 1px 1px 1px rgb(87, 87, 87), -1px 5px 7px  rgb(167, 167, 167), -1px -1px 1px  rgb(167, 167, 167) !important;
+}
+
+.dark> footer{
+    background-color:rgb(123, 194, 226) !important;
+}
+
+.dark> section{
+    color:white !important;
+    border: solid white 1px !important;
+    background-color: rgb(0, 108, 158) !important;
 }

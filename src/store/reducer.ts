@@ -10,6 +10,7 @@ export interface StateType {
   weatherPerCity: WeatherPerCityModel[];
   favorites: WeatherPerCityModel[];
   msg: string;
+  themes: string;
 }
 
 let newState: StateType = {
@@ -19,26 +20,36 @@ let newState: StateType = {
     "LocalObservationDateTime": "2021-10-26T11:51:00+03:00",
     "WeatherText": "Clear",
     "Temperature": {
-      "Metric": {
-      "Value": 27.2,
-      "Unit": "C",
-      },
-    }},
+        "Metric": {
+        "Value": 27.2,
+        "Unit": "C",
+        },
+        "Imperial": {
+          "Value": 74,
+          "Unit": "F",
+        }
+    },
+  },
     {
       "Key":2,
       "LocalObservationDateTime": "2021-10-25T21:51:00+03:00",
       "WeatherText": "Mostly clear",
       "Temperature": {
-      "Metric": {
-      "Value": 23.2,
-      "Unit": "C",
-      }
+        "Metric": {
+        "Value": 23.2,
+        "Unit": "C",
+        },
+        "Imperial": {
+          "Value": 74,
+          "Unit": "F",
+        }
     }},
     ],
   searchResults: [],
   dailyForecasts: [],
   favorites: [],
   msg: "",
+  themes: "light"
 };
 
 const reducer = (state: StateType = newState, action: Actions): StateType => {
@@ -83,6 +94,11 @@ const reducer = (state: StateType = newState, action: Actions): StateType => {
       return {
         ...state,
         msg: action.payload,
+      };
+    case AllActionType.THEMES:
+      return {
+        ...state,
+        themes: action.payload,
       };
     default:
       return state;

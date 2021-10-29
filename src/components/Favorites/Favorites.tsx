@@ -13,25 +13,21 @@ import { DailyForecastsModel } from "../../Models/DailyForecastsModel";
 export const Favorites = () => {
   const favorites = useSelector((state: RootStateOrAny) => state.favorites);
   let dailyWeather = useSelector((state: RootStateOrAny) => state.dailyForecasts);
-
+  const searchResults = useSelector((state: RootStateOrAny) => state.searchResults);
   const dispatch = useDispatch();
-  const telAviv = 215854;
 
   useEffect(() => {
-      if(favorites[0] === undefined){
-        dispatch(getFiveDaysWeather(telAviv));        
-      }else{
-        dispatch(getFiveDaysWeather(favorites[0].Key));
-      }
+    if(favorites[0] === undefined && searchResults.length !== 0){
+      dispatch(getFiveDaysWeather(searchResults[0].Key, searchResults[0].LocalizedName)); 
+      return
+    }else if(favorites[0] !== undefined){
+      dispatch(getFiveDaysWeather(favorites[0].Key, favorites[0].LocalizedName)); 
+      return
+    }       
   }, []);
 
   return (
     <div className="main">
-      <div className="daily-cards">
-        { dailyWeather?.map((city: DailyForecastsModel & WeatherPerCityModel, index: number) => {
-          return <MainCard key={index} city={city}/>;
-        })}
-      </div>
       <div className="main-container-overlay">
         <div>
             <div className="main-container-header">
@@ -42,6 +38,12 @@ export const Favorites = () => {
                 return <MainCard key={index} city={city} />;
                 })}
             </div>
+            <h3>{dailyWeather[0]?.localizedName}</h3>
+            <div className="daily-cards">
+              { dailyWeather?.map((city: DailyForecastsModel & WeatherPerCityModel, index: number) => {
+                return <MainCard key={index} city={city}/>;
+              })}
+            </div>              
         </div>
       </div>
     </div>

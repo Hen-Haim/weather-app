@@ -5,5 +5,6 @@ export enum AllActionType {
     REMOVE_FAVORITE = "REMOVE_FAVORITE",
     ADD_FAVORITE = "ADD_FAVORITE",
     GET_DAILY_FORECASTS = "GET_DAILY_FORECASTS",
-    MSG = "MSG"
+    MSG = "MSG",
+    THEMES = "THEMES"
 }
