@@ -1,131 +1,153 @@
-
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 628px;
+.TransitionGroup {
+  width: 100%;
+  height: 100%;
 }
 
-.main-container-overlay{
-    width: 660px;
-    border: rgb(204, 204, 204) 1px solid;
-    height: 82%;
-    margin: 2% 0 0 0;
-    background-blend-mode:  overlay;
-    background-image: url("../../assets/main-pic2.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    align-self: center;
-    box-shadow: 1px 5px 10px rgb(75, 75, 75);
-    border-radius: 3%;
-    display:flex;
-    flex-direction: column;
-
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
 }
 
-.main-container-overlay> div{
-    background-color: rgba(255, 255, 255, 0.733);
-    height:100%;
-    border-radius: 3%;
+.main-container-overlay {
+  width: 70%;
+  border: rgb(204, 204, 204) 1px solid;
+  height: 82%;
+  margin: 2% 0 0 0;
+  background-blend-mode: overlay;
+  background-image: url("../../assets/main-pic2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-self: center;
+  box-shadow: 1px 5px 10px rgb(75, 75, 75);
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container-overlay > div {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.733);
+  height: 100%;
+  border-radius: 3%;
+}
+
+.main-container-overlay > div > h3 {
+  flex: 1;
 }
 
 .main-container-header {
-    text-align: center;
-    padding: 10px 0 10px 0 ;
-    margin: 0 0 20px 0 ;
-    text-shadow: 1px 1px 1px rgb(56, 56, 56), -1px 5px 7px  rgb(44, 44, 44), -1px -1px 1px  rgb(49, 49, 49);
-    background: rgb(0,152,149);
-    background: linear-gradient(180deg, rgba(0,152,149,0.23322832550989148) 0%, rgba(182, 123, 28, 0.438) 100%);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  flex: 2;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  margin: 0 0 20px 0;
+  text-shadow: 1px 1px 1px rgb(56, 56, 56), -1px 5px 7px rgb(44, 44, 44), -1px -1px 1px rgb(49, 49, 49);
+  background: rgb(0, 152, 149);
+  background: linear-gradient(180deg,rgba(0, 152, 149, 0.23322832550989148) 0%,rgba(182, 123, 28, 0.438) 100% );
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.main-container-header >h4{
-    text-align: center;
-    margin: 20px 0 20px 0 ;
-    color:white;
-    font-size: 22px;
-    text-shadow: 1px 1px grey, -1px 5px 1px rgb(0, 174, 255, 0.3334), -1px -1px 1px grey;
+.main-container-header > h4 {
+  text-align: center;
+  margin: 20px 0 20px 0;
+  color: white;
+  font-size: 22px;
+  text-shadow: 1px 1px grey, -1px 5px 1px rgb(0, 174, 255, 0.3334),
+    -1px -1px 1px grey;
 }
 
-.main-container-overlay> div >:nth-child(2){
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 220px;
+.daily-cards {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 15px 0;
+  justify-content: space-around;
 }
 
-.daily-cards{
-    height:17%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 10px 0 10px 0;
+.daily-cards > div {
+  box-shadow: 1px 5px 10px rgb(167, 167, 167);
+  justify-content: center;
+  text-align: center;
+  border-radius: 10%;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.863);
+  width: 11.9vw;
+  height: 13vh;
 }
 
-.daily-cards > div>.temperature{
-    display: flex;
-    flex-direction: row;
-    width:75px;
-    justify-content: center;
+.daily-cards p {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 174, 255, 0.342);
+  text-shadow: 2px 2px 10px rgb(87, 87, 87), -1px -1px 1px rgb(0, 0, 0);
+  font-size: 13px;
+  font-weight: bold;
+  z-index: 20000;
+  font-family: cursive;
 }
 
-.daily-cards > div{
-    box-shadow: 1px 5px 10px rgb(167, 167, 167);
-    justify-content: center;
-    text-align: center;
-    margin-left:10px;
-    border-radius: 10%;
-    padding:10px 20px;
-    background-color: rgba(255, 255, 255, 0.863);
-
+.dark > main .main-container-overlay > div {
+  background-color: rgba(46, 46, 46, 0.733) !important;
+  height: 100%;
+  border-radius: 3%;
 }
 
-.daily-cards p{
-    margin: 0;
-    padding:0;
-    color: rgba(0, 174, 255, 0.342); 
-    text-shadow: 2px 2px 10px rgb(87, 87, 87), -1px -1px 1px  rgb(0, 0, 0); 
-    font-size: 13px;
-    font-weight: bold;
-    z-index: 20000;
-    font-family: cursive;
-}
-
-.dark> main .main-container-overlay> div{
-    background-color: rgba(46, 46, 46, 0.733) !important;
-    height:100%;
-    border-radius: 3%;
-}
-
-.dark> main .main-container-header {
-    background: rgb(0,152,149);
-    background: linear-gradient(180deg, rgba(21, 96, 131, 0.589) 0%, rgba(255, 255, 255, 0.185) 100%);
+.dark > main .main-container-header {
+  background: rgb(0, 152, 149);
+  background: linear-gradient( 180deg,rgba(21, 96, 131, 0.589) 0%,rgba(255, 255, 255, 0.185) 100% );
 }
 
 .page {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-  }
-  
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
 .fade-appear,
 .fade-enter {
-    opacity: 0;
-    z-index: 1;
+  opacity: 0;
+  z-index: 1;
+  height: 100%;
 }
 .fade-appear-active,
 .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 300ms linear 150ms;
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
 }
 
 .fade-exit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fade-exit.fade-exit-active {
-    opacity: 0;
-    transition: opacity 150ms linear;
+  opacity: 0;
+  transition: opacity 150ms linear;
 }
 
+@media screen and (max-width: 812px) {
+  /* .daily-cards { flex: 4;flex-wrap: wrap;}
+  .daily-cards > div{  width: 9vw; height: 11vh;} */
+  .main-container-overlay{width:95%}
+  .daily-cards > div { width: 16.6vw; height: 13vh; }
+  .daily-cards p {font-size:2vw;}
+}
+
+@media screen and (max-width: 564px) {
+  /* .daily-cards { flex: 4;flex-wrap: wrap;}
+  .daily-cards > div{  width: 9vw; height: 11vh;} */
+  .main-container-overlay{width:97%}
+  .daily-cards > div { width: 16.4vw; height: 10.6vh; }
+  .daily-cards p {font-size:2vw;}
+}
+
+@media screen and (max-width: 416px) {
+  /* .daily-cards { flex: 4;flex-wrap: wrap;}
+  .daily-cards > div{  width: 9vw; height: 11vh;} */
+  .main-container-overlay{width:97%; height:87%}
+  .daily-cards > div { width: 16.4vw; height: 8.6vh; }
+  .daily-cards p {font-size:2vw;}
+}

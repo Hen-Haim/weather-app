@@ -1,0 +1,70 @@
+.favorite-card{
+    display: flex;
+    font-family: cursive;
+    align-items: center;
+    padding: 4px 2px;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px 1px grey;
+    width: 130px;
+    height: 120px;
+    margin: 10px 7px;
+    border-radius: 15%;
+    border: solid 1px lightgray;
+}
+
+.favorite-card >p:nth-child(2){
+    font-size:17px;
+    font-weight: bolder;
+}
+
+.favorite-temp-div {
+    display: flex;
+    flex-direction: row;
+    width: 86px;
+    align-items: center;
+}
+
+.favorite-temp-div >p{
+    font-size:15px;
+}
+
+.favorite-temp-div >div{
+    margin-left: auto;
+}
+
+.favorite-add-or-remove {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: max-content;
+    height: max-content;
+    color: rgb(9, 89, 126);
+    border: 1px white solid;
+    background-color: white;
+    border-radius:15%;
+    font-size: 21px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-left: 9px;
+}
+
+.favorite-temperature-icon {
+    position: absolute;
+    font-size: 25px;
+}
+
+.favorite-temp-c-btn {
+    background-color:rgb(162, 228, 236);
+    border-radius: 15%;
+    padding: 1.1px 5px;
+    font-size: 11px;
+    margin-left: 5px;
+}
+  
+.favorite-temp-f-btn {
+    background-color: rgb(255, 226, 173);
+    border-radius: 15%;
+    padding: 1.1px 5px;
+    font-size: 11px;
+    margin-left: 5px;
+}

@@ -10,7 +10,7 @@ interface ADD_FAVORITE {
 
 interface REMOVE_FAVORITE {
   type: AllActionType.REMOVE_FAVORITE;
-  payload: WeatherPerCityModel;
+  payload: WeatherPerCityModel[];
 }
 
 interface SEARCH_RESULTS {
@@ -20,11 +20,7 @@ interface SEARCH_RESULTS {
 
 interface CITY_WEATHER {
   type: AllActionType.CITY_WEATHER;
-  payload: WeatherPerCityModel;
-}
-
-interface CLEAR_CITY_WEATHER {
-  type: AllActionType.CLEAR_CITY_WEATHER;
+  payload: WeatherPerCityModel[];
 }
 
 interface GET_DAILY_FORECASTS {
@@ -37,9 +33,9 @@ interface MSG {
   payload: string;
 }
 
-interface THEMES {
-  type: AllActionType.THEMES;
-  payload: string;
+interface GEO_LOCATION {
+  type: AllActionType.GEO_LOCATION;
+  payload: SearchWeatherCityModel[];
 }
 
 export type Actions =
@@ -49,5 +45,4 @@ export type Actions =
   | CITY_WEATHER
   | GET_DAILY_FORECASTS
   | MSG
-  | CLEAR_CITY_WEATHER
-  | THEMES;
+  | GEO_LOCATION;

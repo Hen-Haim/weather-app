@@ -1,5 +1,5 @@
 import "./Home.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { sendMessage } from "../../store/actions";
 import { useDispatch } from "react-redux";
 //images
@@ -12,28 +12,18 @@ import img6 from "../../assets/home-pic6.jpg";
 
 
 export const Home = () => {
-  let images = [img1, img2, img3, img4, img5, img6];
-  let [index, setIndex] = useState(0);
-  let opacity: string = '';
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setInterval(() => setIndex( Math.floor(Math.random() * 6) ), 3500);
     dispatch(sendMessage(""));        
   }, []);
-
-  let randomOp = (image: string) => {
-    image === images[index] ? opacity = "0.3" : opacity = "1";
-    return opacity
-  };
 
   return (
     <div className="home">
       <div>
         <h1>
-          {" "}
           Herolo/Abra <br />
-          Weather Project{" "}
+          Weather Project
         </h1>
         <h5>
           Using: <br />
@@ -43,13 +33,13 @@ export const Home = () => {
         </h5>
       </div>
       <div>
-        <img src={img1} style={{ opacity: randomOp(img1) }} alt="sun" />
-        <img src={img2} style={{ opacity: randomOp(img2) }} alt="moon" />
-        <img src={img3} style={{ opacity: randomOp(img3) }} alt="cloud" />
+        <img src={img1} className="home-images" alt="sun" />
+        <img src={img2} className="home-images" alt="moon" />
+        <img src={img3} className="home-images" alt="cloud" />
         <h2>Welcome!</h2>
-        <img src={img4} style={{ opacity: randomOp(img4) }} alt="sunAndCloud" />
-        <img src={img5} style={{ opacity: randomOp(img5) }} alt="snow" />
-        <img src={img6} style={{ opacity: randomOp(img6) }} alt="lightening" />
+        <img src={img4} className="home-images" alt="sunAndCloud" />
+        <img src={img5} className="home-images" alt="snow" />
+        <img src={img6} className="home-images" alt="lightening" />
       </div>
     </div>
   );

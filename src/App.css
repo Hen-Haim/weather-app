@@ -1,7 +1,7 @@
-.App {
+.app {
     height: 100%;
     display: grid;
-    grid-template-rows: 15% 80% 5%;
+    grid-template-rows: 10% 86% 4%;
     grid-template-columns:repeat(12,1fr);
     margin:0;
     padding:0;
@@ -11,21 +11,23 @@
     overflow:hidden
 }
 
-.App > Header{
+.app > header{
     grid-row: 1/2;
     grid-column:span 12;
     margin: 0;
     box-sizing: border-box;
 }
 
-.App > Main{
+.app > main{
     grid-row: 2 / 3;
     grid-column:span 12;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-.App > Footer{
+.app > footer{
     grid-row: 3 / 4;
     grid-column:span 12;
     margin: 0;
@@ -59,7 +61,7 @@ header{
     flex-direction: row;
 }
 
-.header-div-app > div{
+.switch-container{
     align-self: center;
 }
 
@@ -93,6 +95,10 @@ header{
     font-weight:bold;
 }
 
+.nav > a:hover{
+    opacity:0.6;
+}
+
 footer{
     color:white;
     text-align: center;
@@ -113,17 +119,6 @@ section{
     padding: 2px 2px;
     font-size: 15px;
     text-align: center;
-}
-
-.theme-btn{
-    margin-left:40px;
-    padding: 4px 5px;
-    align-self: center;
-    font-size: 15px;
-    font-family: Geneva, Verdana, sans-serif;  
-    font-stretch: extra-condensed;
-    border-radius: 12%;
-
 }
 
 .dark-btn{
@@ -158,4 +153,111 @@ section{
     color:white !important;
     border: solid white 1px !important;
     background-color: transparent !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    align-self: center;
+    margin-left:5vw;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196f3;
+    transition: 0.4s;
+}
+  
+.slider:before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight:900;
+    content: "\f185";
+    font-size: 18px;
+    color: orange;
+    text-shadow: 1px 1px 1px black;
+    height: 28px;
+    width: 28px;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white ;
+}
+  
+input:checked + .slider {
+    background-color: #ccc;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #ccc;
+}
+  
+  input:checked + .slider:before {
+    transform: translateX(24px);
+    content: "\f186";
+    background: rgb(34, 33, 104);
+    text-shadow: inset 1px 1px 1px grey;
+}
+ 
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+@media screen and (max-width: 976px) {
+    .header-div-app>h1{font-size: 2.5vw}
+    .logo{width:5.2vw; height:5.2vw;}
+    header{ padding: 0 10px 0 10px;}
+    .nav{ width:44vw; }
+    .nav > a{font-size:2vw}
+}
+
+@media screen and (max-width: 770px) {
+    .header-div-app>h1{font-size: 2.8vh}
+    .logo{width:5.2vh; height:5.2vh;}
+    .nav{ width:42vh; }
+    .nav > a{font-size:2vh}
+}
+
+@media screen and (max-width: 622px) {
+    .header-div-app>h1{font-size: 3.7vh}
+    .logo{width:5.2vh; height:5.2vh;}
+    header{ flex-direction:column; justify-content: space-around; align-items: center;}
+    .nav{ width:42vh; }
+    .nav > a{font-size:2vh}
+    .app { grid-template-rows: 15% 81% 4%;}
+    .switch { width: 42px; height: 17px; margin-left: 0; }
+    .slider:before {width: 20px; height: 20px; font-size:13px;}
+}
+
+@media screen and (max-width: 310px) {
+    .logo{width:4.3vh; height:4.3vh;}
+    .header-div-app>h1{font-size: 2.8vh}
+    .nav{ width:32vh; }
+    .nav > a{font-size:1.7vh;}
+}
+
+@media screen and (max-width: 240px) {
+    .logo{width:3.6vh; height:3.6vh; margin-right:2px}
+    .header-div-app>h1{font-size: 2.2vh}
+    .nav{ width:25vh; }
+    .nav > a{font-size:1.3vh;}
 }

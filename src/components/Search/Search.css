@@ -4,37 +4,30 @@
     flex-direction: row;
     width:100%;
     justify-content: center;
-    padding: 0 10px 0 10px;
+    padding: 0 90px 0 90px;
 }
 
-.search-div > input{
-    margin: 0 10px 0 10px;
-    width:70%;
+.search-div > div> input{
+    margin: 0.5rem 10px 0.5rem 10px;
+    width: 70%;
     justify-content: center;
+    border-radius: 0.25rem !important;
+}
+
+.my-search-btn{
+    margin: 0.5rem 10px 0.5rem 10px !important;
 }
 
 .search-icon{
-    color:rgb(0, 174, 255); 
-    width:max-content;
-    height:max-content;
+    color: rgb(0, 174, 255); 
+    width: max-content;
+    height: max-content;
     font-size: 20px;
 }
 
-
-.search-cards > div{
-    display: flex;
-    flex-direction: row;
-    font-family: cursive;
-    justify-content: space-around;
-    align-items: center;
-    padding:4px 2px;
-}
-
-.search-cards > div p{
-    font-family: cursive;
-    margin: 0;
-    padding:0;
-    align-items: center;
+.search-cards{
+    flex: 4;
+    overflow-x: hidden;
 }
 
 .main-container-overlay> div> h3{
@@ -42,4 +35,48 @@
     margin: 5px 0 10px 0;
     color: #FFC000;
     text-shadow: 1px 1px 1px grey, -1px 1px 7px rgb(0, 92, 134), 1px -1px 7px rgb(0, 92, 134);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2.5vw;
+}
+
+.show-drop{
+    display: flex;
+    flex-direction: column;
+    z-index: 20000;
+    position: absolute;
+    width: 230px;
+}
+    
+.hide-drop{
+    display: none;
+}
+
+.drop-down-btn{
+    background-color: rgb(201, 166, 64);
+    border-radius: 5%;
+    border: none;
+    box-shadow: 1px 1px 5px 1px grey;
+    height: 38px;
+}
+
+.drop-down-btn:hover{
+    background-color: rgb(182, 137, 25);
+
+}
+
+.main-container-overlay> div> h3 {
+    text-align: center;
+    margin: 5px 0 10px 0;
+    color: #FFC000;
+    text-shadow: 1px 1px 1px grey, -1px 1px 7px rgb(0 92 134), 1px -1px 7px rgb(0 92 134);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2.5vw;
+}
+
+@media screen and (max-width: 812px) {
+    .main-container-overlay> div> h3 { font-size: 3.7vw; }
 }

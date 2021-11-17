@@ -1,7 +1,7 @@
 .home{
     display:flex;
     flex-direction: row;
-    height: 628px;
+    height: 100%;
 }
 
 .home >div{
@@ -9,19 +9,23 @@
     margin-top:100px;
 }
 
+.home-images:hover{
+    opacity:0.3;
+}
+
 .home>div:nth-child(1){
     flex:1;
-    padding:0 0 0 190px; 
+    padding:0 0 0 15vw; 
 }
 
 .home>div:nth-child(1)>h5{
     margin-top:72px;
-    font-size: 28px;
+    font-size: 1.9vw;
     font-family: cursive;
 }
 
 .home>div:nth-child(1)>h1{
-    font-size: 49px;
+    font-size: 3.9vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-shadow: 1px 1px 1px rgb(87, 87, 87), -1px 5px 7px  rgb(167, 167, 167), -1px -1px 1px  rgb(167, 167, 167);
 
@@ -40,9 +44,39 @@
 }
 
 .home>div:nth-child(2)>img{
-    width:112px;
-    height:112px;
+    width:9vw;
+    height:9vw;
     margin: 20px;
     box-shadow: 1px 5px 10px rgb(112, 112, 112);
     border-radius: 17%;
 }
+
+@media screen and (max-width: 1220px) {
+    .home>div:nth-child(1)>h5{font-size: 2vw}
+    .home>div:nth-child(1)>h1{font-size: 4vw}
+    .home>div:nth-child(1)>h5{ margin-top: 9vw;}
+}
+
+@media screen and (max-width: 1060px) {
+    .home>div:nth-child(1)>h5{font-size: 2vw}
+    .home>div:nth-child(1)>h1{margin-top:30px; font-size: 4vw}
+    .home>div:nth-child(2){padding:40px 0 0 0 }
+}
+
+@media screen and (max-width: 976px) {
+    .home>div:nth-child(2)>h2{font-size: 3.2vw}
+    .home>div:nth-child(1)>h5{ margin-top: 9vw;}
+    .home>div:nth-child(2)>img{margin: 1.6vw;}
+    .home >div{margin-top:17vw}
+}
+
+@media screen and (max-width: 770px) {
+    .home {display: flex;flex-direction: column-reverse;}
+    .home >div{margin-top:5vw; padding-left: 0 !important;text-align: center;}
+    .home>div:nth-child(1)>h5{ margin-top: 5vw; font-size:2.5vh}
+    .home>div:nth-child(1)>h1{ margin-top: 0vw; font-size:4.2vh}
+    .home>div:nth-child(2)>h2{font-size:4.2vh}
+    .home>div:nth-child(2){ flex:1;padding: 2vh 0 0 0}
+    .home>div:nth-child(2)>img{ width:10vh; height:10vh }
+}
+

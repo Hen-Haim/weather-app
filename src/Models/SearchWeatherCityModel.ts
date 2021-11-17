@@ -1,5 +1,5 @@
 export class SearchWeatherCityModel {
-    public Key: string;
+    public Key: number;
     public LocalizedName: string;
 }
 

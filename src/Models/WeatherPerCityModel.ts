@@ -1,9 +1,9 @@
 export class WeatherPerCityModel {
-    public Key?: number;
-    public LocalObservationDateTime?: string;
-    public WeatherText?: string;
-    public Temperature?: TemperatureModel;
-    public LocalizedName?: string;
+    public Key: number;
+    public LocalObservationDateTime: string;
+    public WeatherText: string;
+    public Temperature: TemperatureModel;
+    public LocalizedName: string;
 }
 
 export class TemperatureModel {

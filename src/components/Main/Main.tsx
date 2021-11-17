@@ -7,9 +7,9 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 export const Main = () => {
     return (
-        <div>
+        <>
             <Route render={({location})=>(
-                <TransitionGroup>
+                <TransitionGroup className="TransitionGroup">
                     <CSSTransition
                         key={location.key}
                         timeout={300}
@@ -25,6 +25,6 @@ export const Main = () => {
                     </CSSTransition>
                 </TransitionGroup>
             )}/>            
-        </div>
+        </>
     )
 }

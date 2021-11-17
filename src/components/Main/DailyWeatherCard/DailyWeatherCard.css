@@ -1,0 +1,24 @@
+.temp-icon {
+    color: rgba(0, 174, 255, 0.342);
+    position: absolute;
+    font-size: 5vw;
+}
+
+.time {
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.temperature {
+    display: flex;
+    justify-content: center;
+}
+
+.units{
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 812px) {
+    .temp-icon{ font-size: 7vw; }
+}

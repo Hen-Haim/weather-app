@@ -10,11 +10,11 @@ export interface StateType {
   weatherPerCity: WeatherPerCityModel[];
   favorites: WeatherPerCityModel[];
   msg: string;
-  themes: string;
+  locationResult: SearchWeatherCityModel[];
 }
 
 let newState: StateType = {
-  weatherPerCity: [
+  weatherPerCity: [  //fix
     {
       "Key":1,
     "LocalObservationDateTime": "2021-10-26T11:51:00+03:00",
@@ -29,6 +29,7 @@ let newState: StateType = {
           "Unit": "F",
         }
     },
+    "LocalizedName":"",
   },
     {
       "Key":2,
@@ -43,13 +44,15 @@ let newState: StateType = {
           "Value": 74,
           "Unit": "F",
         }
-    }},
+    },
+    "LocalizedName":"",
+  },
     ],
   searchResults: [],
   dailyForecasts: [],
   favorites: [],
   msg: "",
-  themes: "light"
+  locationResult: [],
 };
 
 const reducer = (state: StateType = newState, action: Actions): StateType => {
@@ -58,47 +61,42 @@ const reducer = (state: StateType = newState, action: Actions): StateType => {
       return {
         ...state,
         dailyForecasts: [...action.payload],
-        msg: '',
+        msg: "",
       };
     case AllActionType.ADD_FAVORITE:
       return {
         ...state,
         favorites: [...state.favorites, action.payload],
-        msg: '',
+        msg: "",
       };
     case AllActionType.REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites?.filter( (favorite) => favorite !== action.payload ),
-        msg: '',
+        favorites: action.payload,
+        msg: "",
       };
     case AllActionType.SEARCH_RESULTS:
       return {
         ...state,
         searchResults: action.payload,
-        msg: '',
+        msg: "",
       };
     case AllActionType.CITY_WEATHER:
       return {
         ...state,
-        weatherPerCity: [...state.weatherPerCity, action.payload],
-        msg: '',
-      };
-    case AllActionType.CLEAR_CITY_WEATHER:
-      return {
-        ...state,
-        weatherPerCity: [],
-        msg: '',
+        weatherPerCity: action.payload,
+        msg: "",
       };
     case AllActionType.MSG:
       return {
         ...state,
         msg: action.payload,
       };
-    case AllActionType.THEMES:
+    case AllActionType.GEO_LOCATION:
       return {
         ...state,
-        themes: action.payload,
+        locationResult: action.payload,
+        msg: "",
       };
     default:
       return state;
