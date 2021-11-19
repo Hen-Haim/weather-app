@@ -14,40 +14,7 @@ export interface StateType {
 }
 
 let newState: StateType = {
-  weatherPerCity: [  //fix
-    {
-      "Key":1,
-    "LocalObservationDateTime": "2021-10-26T11:51:00+03:00",
-    "WeatherText": "Clear",
-    "Temperature": {
-        "Metric": {
-        "Value": 27.2,
-        "Unit": "C",
-        },
-        "Imperial": {
-          "Value": 74,
-          "Unit": "F",
-        }
-    },
-    "LocalizedName":"",
-  },
-    {
-      "Key":2,
-      "LocalObservationDateTime": "2021-10-25T21:51:00+03:00",
-      "WeatherText": "Mostly clear",
-      "Temperature": {
-        "Metric": {
-        "Value": 23.2,
-        "Unit": "C",
-        },
-        "Imperial": {
-          "Value": 74,
-          "Unit": "F",
-        }
-    },
-    "LocalizedName":"",
-  },
-    ],
+  weatherPerCity: [],
   searchResults: [],
   dailyForecasts: [],
   favorites: [],

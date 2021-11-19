@@ -5,9 +5,7 @@ import { AllActionType } from "../Models/ActionsType";
 import { Dispatch } from "redux";
 import { RootStateOrAny } from "react-redux";
 
-// const APIKey = "A2HMcbeXzyhe5PUHsiqBQbovW1PyVitw";  //fix
-const APIKey = "qWAkpSYSQjcUJ6ClLcoAau1J2cU3IkGI";
-// const APIKey = 'HeIBFKnJmUovajKW8vDI6Ja7F1c80SiR';
+const APIKey = "A2HMcbeXzyhe5PUHsiqBQbovW1PyVitw";  
 
 export const getCurrentPosition = () => async (dispatch: Dispatch) => {
   const successPos = async (position: any) => {
